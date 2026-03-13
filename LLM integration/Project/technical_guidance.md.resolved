@@ -1,0 +1,67 @@
+# Technical Guidance: AI Training Project
+
+This guide provides instructions on how to set up and run the different levels of the AI integration project.
+
+## Prerequisites
+- **Python 3.8 or higher** installed on your system.
+- An **OpenRouter API Key**.
+
+## 1. Setup
+
+### Virtual Environment (Recommended)
+It's best to use a virtual environment to manage dependencies:
+```powershell
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+### Install Dependencies
+Install the required Python packages using `pip`:
+```powershell
+pip install -r requirements.txt
+```
+
+### Configure Environment Variables
+1. Locate the [.env](file:///c:/Users/suren/Downloads/AI-Training-main/AI-Training-main/LLM%20integration/Project/.env) file in the `Project` directory.
+2. Replace `API_KEY` with your actual OpenRouter API key:
+   ```env
+   OPENROUTER_API_KEY=your_actual_api_key_here
+   ```
+
+## 2. Running the Levels
+
+The project is structured into four levels (L1 to L4), each adding more complexity.
+
+### Level 1: Basic API Call
+A simple script that sends a single prompt to an LLM.
+```powershell
+cd L1
+python main.py
+```
+
+### Level 2: Interactive CLI Bot
+A command-line interface bot that allows continuous conversation.
+```powershell
+cd L2
+python main.py
+```
+
+### Level 3: Template-Based Chatbot
+Uses external prompt templates and environment variables.
+```powershell
+cd L3
+python main.py
+```
+
+### Level 4: Flask Web Application
+A full-stack web application with a chat interface.
+```powershell
+cd L4
+python main.py
+```
+- Once running, open your browser and go to: `http://127.0.0.1:5000`
+
+## Troubleshooting
+- **API Key Error**: Ensure `OPENROUTER_API_KEY` is correctly set in [.env](file:///c:/Users/suren/Downloads/AI-Training-main/AI-Training-main/LLM%20integration/Project/.env) and that the file is in the `Project` root.
+- **Missing Module**: Run `pip install -r requirements.txt` again to ensure all packages are installed.
+- **Port In Use (L4)**: If port 5000 is occupied, you might need to close the application using it or change the port in [L4/main.py](file:///c:/Users/suren/Downloads/AI-Training-main/AI-Training-main/LLM%20integration/Project/L4/main.py).
